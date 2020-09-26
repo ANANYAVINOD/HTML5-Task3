@@ -570,7 +570,6 @@ button {
 #header h1 {
   align-self: center;
 }
-
 h2,
 .block.col-holder h3 {
   color: #000;
@@ -582,14 +581,18 @@ h2 {
   color: #000;
   font: 45px "Manrope-Bold";
 }
-.block h3 {
-  color: #000;
-  font: 40px "Manrope-Bold";
-  margin-bottom: 30px;
-  text-align: center;
-}
+
 h5 {
   color: var(--secondary-color);
+  font: 16px "Manrope-Bold";
+}
+.txt-secondary {
+  color: var(--secondary-color);
+  font: 45px "Manrope-Bold";
+}
+h4 {
+  font: 20px "Manrope-Bold";
+  color: #3a3a3a;
 }
 .banner .container .panel-left h5 {
   font-family: "Manrope-SemiBold";
@@ -617,6 +620,7 @@ h5 {
 }
 .block {
   margin-top: 100px;
+  margin-bottom: 30px;
 }
 .block .block-panel-right,
 .block .block-panel-left {
@@ -667,10 +671,11 @@ main {
 .banner .container .panel-right {
   width: 50%;
 }
-.banner .container .panel-left h2, p {
+.banner .container .panel-left p {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
-.block .block-panel-right h3, p{
+.block .block-panel-right h3, p {
   text-align: left;
 }
 .block .block-panel-right h5 {
@@ -692,7 +697,6 @@ main {
   margin-bottom: 20px;
   color: #3a3a3a;
 }
-
 .listing-style li img {
   border-radius: 50%;
   background: #f0f1ec;
@@ -712,7 +716,9 @@ main {
 .listing-style-two li {
   flex: 0 1 33.33%;
   padding: 20px;
-  display: grid;
+}
+.listing-style-two li img {
+  text-align: left;
 }
 .listing-style-two li:hover {
   background-color: #fff;
@@ -730,6 +736,7 @@ main {
   object-fit: cover;
   height: 100%;
   vertical-align: middle;
+  border-radius: 5%;
 }
 .flex-box .slider-info img {
   border-radius: 50%;
@@ -747,10 +754,6 @@ main {
   font: 20px "Manrope-Bold";
   color: #000000;
 }
-
-.flex-box .slider-info {
-  padding-left: 80px;
-}
 .letter-box {
   background-color: #f1f2ee;
   border-radius: 10px;
@@ -759,11 +762,8 @@ main {
 .block-center {
   text-align: center;
 }
-.slider-info {
-  width: 60%;
-}
-.block .title-area {
-  border-bottom: 30px solid #f7f6f4;
+.block .testimonial {
+  justify-content: center;
 }
 .mail-box {
   border-radius: 10px;
@@ -781,7 +781,11 @@ input[type="email"] {
   background: transparent;
   width: 100%;
   padding: 15px 20px;
-  font-size: 18px;
+  font: 18px "Manrope-Bold";
+}
+.letter-box .mail-box 
+input[type="button"] {
+  font: 20px "Manrope-Bold";
 }
 
 /*................................................
@@ -799,14 +803,14 @@ input[type="email"] {
 }
 #footer h4 {
   text-align: left;
-  border-bottom: 20px solid #f7f6f4;
-  border-top: 10px solid #f7f6f4;
   color: #3a3a3a;
+  margin-bottom: 10px;
 }
-#footer .flex-box .footer-logo img {
-  justify-content: left;
+#footer .footer-logo  {
   padding: 0;
-}
+  text-align: left;
+  margin-bottom: 10px;
+} 
 #footer .flex-box .useful-links li a {
   text-align: left;
   color: #656565;
@@ -818,9 +822,10 @@ input[type="email"] {
 hr {
   border: 1px solid #eee;
 }
-.copyright h4 {
+#footer .copyright h4 {
   font: 14px "Manrope-Medium";
   padding: 20px;
+  text-align: center;
 }
 
 /*................................................
@@ -833,12 +838,28 @@ hr {
   .mobile-only {
     display: none;
   }
-  .contact-form .block-panel-left {
+  .nav-icon {
+    display: none;
+  }
+  .block-panel-left {
     padding-right: 40px;
+  }
+  .block h3 {
+    color: #000;
+    font: 40px "Manrope-Bold";
+    margin-bottom: 30px;
+    text-align: center;
   }
   .listing-style-one li,
   .listing-style-two li {
     flex: 0 1 33.33%;
+  }
+  .listing-style-two li {
+    display: grid;
+  }
+  .slider-info {
+    width: 50%;
+    padding-left: 30px;
   }
 }  
 @media (max-width: 990px) {
@@ -859,29 +880,12 @@ hr {
     justify-content: center;
     align-items: center;
   }
-  .nav-icon {
-    margin: 1em;
-    width: 40px;
-  }
-  #header .nav-icon:before,
-  .nav-icon:after,
-  .nav-icon div {
+   #header .nav-icon div {
+    margin: 5px;
+    width: 25px;
+    height: 4px;
     background-color: #709d61;
     border-radius: 3px;
-    content: " ";
-    display: block;
-    height: 5px;
-    margin: 7px 0;
-    transition: all .2s ease-in-out;
-  }
-  .nav-icon:hover:before {
-    transform: translateY(12px) rotate(135deg);
-  }
-  .nav-icon:hover:after {
-    transform: translateY(-12px) rotate(-135deg);
-  }
-  .nav-icon:hover div {
-    transform: scale(0);
   }
   #header nav {
     display: none;
@@ -893,9 +897,6 @@ hr {
   #header nav ul li a {
   color: #fff;
   font-size: 25px;
-  }
-  .block {
-    margin-top: 50px;
   }
   .banner .container,
   .listing-style,
@@ -913,13 +914,9 @@ hr {
   .banner .panel-left {
     order: 1;
   }
-  .banner .container .panel-left h5 {
-    font-size: 25px;
-  }
   .banner .container .panel-left h2 {
     margin-bottom: 0;
   }
-
   .listing-style-one {
     align-items: center;
     width: 100%;
@@ -933,7 +930,6 @@ hr {
     width: 100%;
     align-items: center;
   }
-  
   .listing-style-two h4 {
     text-align: center;
   }
@@ -947,12 +943,13 @@ hr {
   .block .block-panel-right .btn-secondary {
     align-items: center;
   }
-  .flex-box {
-    flex-direction: column;
-  }
   .block .flex-box img {
     justify-content: center;
     max-width: 100%;
+    margin: 20px 40px;
+  }
+  .block .testimonial {
+    flex-direction: column;
   }
   .flex-box .slider-info p {
     text-align: center;
@@ -963,30 +960,38 @@ hr {
   #footer .flex-box > li {
     margin: 20px 0;
   }
-  .contact-list .block-panel-left {
-    padding-bottom: 60px;
-  }
-  .contact-list {
-    text-align: left;
-  }
   .letter-box .mail-box input[type="text"] {
     font: 14px;
+  }
+  #footer .footer-logo {
+    text-align: center;
+  }
+  #footer .useful-links {
+    text-align: center;
+    margin-left: 39%;
   }
   #footer .container .flex-box h4 {
     text-align: center;
   }
+  #footer .container .flex-box .contact-list .day {
+    flex-direction: row;
+  }
 } 
 @media (max-width: 768px)  {
-  h2, .block.col-holder h3 {
+  h2, h3, .banner .container .txt-secondary,
+  .block .block-panel-right h3 {
     font-size: 25px;
-  }
+    color: #000000;
+  }  
   .listing-style-three li {
     flex: 1 0 100%;
+  }
+  .block .letter-box .title-area h3, h5 {
+    margin-bottom: 20px;
   }
   .slider-info .flex-box {
     flex-direction: column;
     text-align: center;
-    align-items: center;
   }
   .flex-box .slider-info img {
     display: none;
